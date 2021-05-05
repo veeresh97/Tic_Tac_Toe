@@ -15,6 +15,7 @@ public class TicTacToeGame {
         Scanner obj = new Scanner(System.in);
         System.out.println("Enter your choice X or O  ");
         char player = obj.next().charAt(0);
+        obj.close();
         char computer = ' ';
         if (player == 'X' || player == 'x') {
             computer = 'O';
