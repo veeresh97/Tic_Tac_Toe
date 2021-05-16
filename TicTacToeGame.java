@@ -271,7 +271,7 @@ public class TicTacToeGame {
             System.out.println("Want to play again Y or N");
             char playAgain = scan.next().charAt(0);
             if (playAgain=='n'||playAgain=='N') gamestatus=false;
-
+            System.out.println("Thank You");
         }
     }
 }
