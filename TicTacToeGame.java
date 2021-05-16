@@ -6,7 +6,6 @@ public class TicTacToeGame {
     public char userChoice;
     public int counter = 0;
     public char[] board;
-
     //    create board
     public char[] createBoard() {
         board = new char[10];
