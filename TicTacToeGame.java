@@ -2,8 +2,7 @@
 import java.util.Scanner;
 
 public class TicTacToeGame {
- 
-	 //creating board
+	//creating board
     public static char[] createBoard() {
         char[] board = new char[10];
         for (int i = 1; i < board.length; i++) {
@@ -35,15 +34,25 @@ public class TicTacToeGame {
         System.out.println(board[7] + "|" + board[8] + "|" + board[9]);
     }
     //make move only if location is empty and added player value
-    public static void makeMove(char[] board,char player) {
+    public static void makeMove(char[] board,char player1) {
         Scanner obj = new Scanner(System.in);
         System.out.println("enter a location number ");
         int location = obj.nextInt();
         if (0 < location && location < 10) {
             if (board[location] == ' ') {
-                board[location] = player;
+                char player = 0;
+				board[location] = player;
             } else
                 System.out.println("invalid");
+        }
+    }
+    //who play first
+    public static void tossToBegin(){
+        int toss = (int)Math.floor(Math.random() * 10) % 2;
+        if (toss == 0){
+            System.out.println("Player1 is your chance to play");
+        }else {
+            System.out.println("computer is your chance to play");
         }
     }
 
@@ -51,6 +60,7 @@ public class TicTacToeGame {
         System.out.println("welcome to TikTakTo");
         char[] board = createBoard();
         char player = makeChoice();
+        tossToBegin();
         displayBoard(board);
         makeMove(board,player);
         displayBoard(board);
